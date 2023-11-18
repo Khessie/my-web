@@ -161,6 +161,11 @@ color: #00abf0;
 text-decoration: none;
 z-index: 1;
 overflow: hidden;
+transition: .5s;
+}
+
+.contact-content a:hover{
+  color: #081b29;
 }
 
 .contact-content a::before{

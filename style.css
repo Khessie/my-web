@@ -27,10 +27,22 @@ body {
 }
 
 .logo {
+  position: relative;
   font-size: 25px;
   color: #ededed;
   text-decoration: none;
   font-weight: 600;
+  
+}
+
+.logo::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
 }
 
 .navbar a {
@@ -49,6 +61,10 @@ body {
 
 .about {
   height: 100vh;
+  background: url('image.png') no-repeat;
+  background-size: 35%;
+  background-position: right;
+  
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -182,5 +198,21 @@ transition: .5s;
 
 .contact-content a:hover::before{
   width: 100%;
+
+}
+
+.about-imgHover{
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 500px;
+  height: 100%;
+  background: transparent;
+  border: 2px solid red;
+}
+
+.about-imgHover:hover{
+  background: yellowgreen;
+  opacity: .8;
 
 }

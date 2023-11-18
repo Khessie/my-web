@@ -64,12 +64,11 @@ body {
 .about {
   height: 100vh;
   background: url('image.png') no-repeat;
-  background-size: 35%;
+  background-size: 25%;
   background-position: right;
-  
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 15%;
 }
 
 .about-content{
@@ -77,6 +76,7 @@ body {
 
 }
 .about-content h1{
+  position: relative;
 font-size: 56px;
 font-weight: 700;
 line-height: 1.2;
@@ -95,22 +95,62 @@ line-height: 1.2;
 }
 
 .about-content h3{
+  position: relative;
   font-size: 32px;
   font-weight: 700;
   color: #00abf0;
 }
 
+.about-content h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
 .about-content p{
+  position: relative;
   font-size: 16px;
   margin: 20px 0 40px;
 
 }
 
+.about-content p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.7s;
+}
+
 .about-content .btn-box{
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 345px;
   height: 50px;
+}
+
+.about-content .btn-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.9s;
+  z-index: 2;
 }
 
 .btn-box a{
@@ -177,6 +217,19 @@ background: #00abf0;
 
 }
 
+.contact-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 2.5s;
+  z-index: 2;
+}
+
 .contact-content a{
   position: relative;
 display: inline-flex;
@@ -219,22 +272,44 @@ transition: .5s;
 .about-imgHover{
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 0;
   width: 500px;
   height: 100%;
   background: transparent;
-  border: 2px solid red;
+  transition: 3s;
+  animation: manipActiveHover .1s forwards;
+  animation-delay: 4s;
+  pointer-events: none;
 }
 
 .about-imgHover:hover{
-  background: yellowgreen;
+  background: #081b29;
   opacity: .8;
 
+
+}
+
+.about-imgHover::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 3s;
+  z-index: 100;
 }
 
 /* KEYFRAMES ANIMATION */
 @keyframes showRight {
   100%{
     width: 0;
+  }
+}
+@keyframes manipActiveHover {
+  100%{
+    pointer-events: auto;
   }
 }

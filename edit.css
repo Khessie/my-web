@@ -1,0 +1,9 @@
+.form {
+    height: 100vh;
+    /* background: url('image.png') no-repeat;
+    background-size: 25%;
+    background-position: right;
+    display: flex; */
+    align-items: center;
+    padding: 0 15%;
+}
